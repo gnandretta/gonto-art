@@ -116,7 +116,7 @@ cellBackgroundImage i j onPositions =
 copyButton onPositions =
   button
     [ attribute "data-clipboard-text" (textOutput onPositions)
-    , class "copy-button"
+    , class "btn btn-copy"
     , style [("marginLeft", "50px")]
     ]
     [ text "Copy (and then paste in Slack)" ]
