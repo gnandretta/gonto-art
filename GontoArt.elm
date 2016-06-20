@@ -2,8 +2,39 @@ module GontoArt exposing (..)
 
 import Html exposing (div)
 import Html.Attributes exposing (style)
+import Html.App
+
 
 main =
+  Html.App.beginnerProgram
+    { model = model
+    , view = view
+    , update = update
+    }
+
+
+-- MODEL
+
+type alias Model =
+  {
+  }
+
+model = {}
+
+
+-- UPDATE
+
+type Msg
+  = NoOp
+
+
+update msg model =
+  model
+
+
+-- VIEW
+
+view model =
   box
 
 
