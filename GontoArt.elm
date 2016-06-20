@@ -2,7 +2,9 @@ module GontoArt exposing (..)
 
 import Html exposing (div)
 import Html.Attributes exposing (style)
+import Html.Events exposing (onClick)
 import Html.App
+import Set exposing (Set)
 
 
 main =
@@ -15,31 +17,44 @@ main =
 
 -- MODEL
 
+type alias Position = (Int, Int)
+
 type alias Model =
-  {
+  { onPositions : Set Position
   }
 
-model = {}
+
+model =
+  Model Set.empty
 
 
 -- UPDATE
 
 type Msg
-  = NoOp
+  = TogglePosition Position
 
 
 update msg model =
-  model
+  case msg of
+    TogglePosition position ->
+      { model | onPositions = togglePosition position model.onPositions }
 
+
+
+togglePosition position set =
+  if Set.member position set then
+    Set.remove position set
+  else
+    Set.insert position set
 
 -- VIEW
 
-view model =
-  box
+view {onPositions} =
+  box onPositions
 
 
-box =
-  div [ boxStyle ] rows
+box onPositions =
+  div [ boxStyle ] (rows onPositions)
 
 
 cellLength = 40
@@ -59,13 +74,21 @@ boxStyle =
     ]
 
 
-rows =
+rows onPositions =
   [0..(rowCount - 1)]
     |> List.concatMap ( \i -> List.map ( \j -> (i, j) ) [0..(colCount - 1)] )
-    |> List.map ( \ (i,j) -> div [ cellStyle i j ] [] )
+    |> List.map ( \ (i,j) -> cell i j onPositions )
 
 
-cellStyle i j =
+cell i j onPositions =
+  div
+    [ cellStyle i j onPositions
+    , onClick (TogglePosition (i, j))
+    ]
+    []
+
+
+cellStyle i j onPositions =
   style
     [ ("position", "absolute")
     , ("backgroundColor", "#fff")
@@ -73,5 +96,12 @@ cellStyle i j =
     , ("height", (toString cellLength) ++ "px")
     , ("left", (toString (j * (cellLength + 1))) ++ "px")
     , ("top", (toString (i * (cellLength + 1))) ++ "px")
-    , ("backgroundImage", if i == j then "url(" ++ imageUrl ++ ")" else "")
+    , ("backgroundImage", cellBackgroundImage i j onPositions)
     ]
+
+
+cellBackgroundImage i j onPositions =
+  if Set.member (i, j) onPositions then
+    "url(" ++ imageUrl ++ ")"
+  else
+    ""
