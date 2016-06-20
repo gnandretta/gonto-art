@@ -1,7 +1,7 @@
 module GontoArt exposing (..)
 
-import Html exposing (div)
-import Html.Attributes exposing (style)
+import Html exposing (button, div, text)
+import Html.Attributes exposing (attribute, class, style)
 import Html.Events exposing (onClick)
 import Html.App
 import Set exposing (Set)
@@ -50,7 +50,10 @@ togglePosition position set =
 -- VIEW
 
 view {onPositions} =
-  box onPositions
+  div []
+   [ box onPositions
+   , copyButton onPositions
+   ]
 
 
 box onPositions =
@@ -74,10 +77,14 @@ boxStyle =
     ]
 
 
+positions =
+  List.concatMap
+    ( \i -> List.map ( \j -> (i, j) ) [0..(colCount - 1)] )
+    [0..(rowCount - 1)]
+
+
 rows onPositions =
-  [0..(rowCount - 1)]
-    |> List.concatMap ( \i -> List.map ( \j -> (i, j) ) [0..(colCount - 1)] )
-    |> List.map ( \ (i,j) -> cell i j onPositions )
+  List.map ( \ (i,j) -> cell i j onPositions ) positions
 
 
 cell i j onPositions =
@@ -105,3 +112,26 @@ cellBackgroundImage i j onPositions =
     "url(" ++ imageUrl ++ ")"
   else
     ""
+
+copyButton onPositions =
+  button
+    [ attribute "data-clipboard-text" (textOutput onPositions)
+    , class "copy-button"
+    , style [("marginLeft", "50px")]
+    ]
+    [ text "Copy (and then paste in Slack)" ]
+
+textOutput onPositions =
+  let
+    cellText i j =
+      if Set.member (i, j) onPositions then
+        ":muscle:"
+      else
+        "        "
+    rowText i =
+      List.map (cellText i) [0..(colCount - 1)]
+  in
+    List.map rowText [0..(rowCount - 1)]
+      |> List.intersperse ["\n"]
+      |> List.concat
+      |> List.foldr (++) ""
