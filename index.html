@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<meta charset="utf-8">
+<title>gonto.art</title>
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/primer/3.0.1/primer.css" />
+<body>
+<script src="build.js"></script>
+<script src="https://cdn.jsdelivr.net/clipboard.js/1.5.10/clipboard.min.js"></script>
+<script>
+  var app = Elm.GontoArt.fullscreen();
+  var c = new Clipboard(".btn-copy");
+
+  // In Safari text is not copied. You need to press cmd+c after
+  // clicking the button.
+  c.on("error", function(e) {
+    var node = e.trigger;
+    node.setAttribute("class", "btn btn-copy tooltipped tooltipped-s tooltipped-no-delay");
+    node.setAttribute("aria-label", "Press ⌘-C");
+
+    node.addEventListener("mouseleave", function() {
+      node.removeAttribute("aria-label");
+      node.setAttribute("class", "btn btn-copy");
+    });
+  });
+</script>
