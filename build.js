@@ -7350,16 +7350,22 @@ var _elm_lang$html$Html_Events$Options = F2(
 		return {stopPropagation: a, preventDefault: b};
 	});
 
-var _user$project$GontoArt$imageUrl = 'data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACgAAAAoCAYAAACM/rhtAAAAAXNSR0IArs4c6QAAAAlwSFlzAAALEwAACxMBAJqcGAAAA6ZpVFh0WE1MOmNvbS5hZG9iZS54bXAAAAAAADx4OnhtcG1ldGEgeG1sbnM6eD0iYWRvYmU6bnM6bWV0YS8iIHg6eG1wdGs9IlhNUCBDb3JlIDUuNC4wIj4KICAgPHJkZjpSREYgeG1sbnM6cmRmPSJodHRwOi8vd3d3LnczLm9yZy8xOTk5LzAyLzIyLXJkZi1zeW50YXgtbnMjIj4KICAgICAgPHJkZjpEZXNjcmlwdGlvbiByZGY6YWJvdXQ9IiIKICAgICAgICAgICAgeG1sbnM6eG1wPSJodHRwOi8vbnMuYWRvYmUuY29tL3hhcC8xLjAvIgogICAgICAgICAgICB4bWxuczp0aWZmPSJodHRwOi8vbnMuYWRvYmUuY29tL3RpZmYvMS4wLyIKICAgICAgICAgICAgeG1sbnM6ZXhpZj0iaHR0cDovL25zLmFkb2JlLmNvbS9leGlmLzEuMC8iPgogICAgICAgICA8eG1wOk1vZGlmeURhdGU+MjAxNi0wNi0xOVQxOTowNjo3MzwveG1wOk1vZGlmeURhdGU+CiAgICAgICAgIDx4bXA6Q3JlYXRvclRvb2w+UGl4ZWxtYXRvciAzLjU8L3htcDpDcmVhdG9yVG9vbD4KICAgICAgICAgPHRpZmY6T3JpZW50YXRpb24+MTwvdGlmZjpPcmllbnRhdGlvbj4KICAgICAgICAgPHRpZmY6Q29tcHJlc3Npb24+NTwvdGlmZjpDb21wcmVzc2lvbj4KICAgICAgICAgPHRpZmY6UmVzb2x1dGlvblVuaXQ+MjwvdGlmZjpSZXNvbHV0aW9uVW5pdD4KICAgICAgICAgPHRpZmY6WVJlc29sdXRpb24+NzI8L3RpZmY6WVJlc29sdXRpb24+CiAgICAgICAgIDx0aWZmOlhSZXNvbHV0aW9uPjcyPC90aWZmOlhSZXNvbHV0aW9uPgogICAgICAgICA8ZXhpZjpQaXhlbFhEaW1lbnNpb24+NDA8L2V4aWY6UGl4ZWxYRGltZW5zaW9uPgogICAgICAgICA8ZXhpZjpDb2xvclNwYWNlPjE8L2V4aWY6Q29sb3JTcGFjZT4K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';
-var _user$project$GontoArt$cellBackgroundImage = F3(
+var _user$project$GontoArt$cellClass = F3(
 	function (i, j, onPositions) {
+		var base = A2(
+			_elm_lang$core$Basics_ops['++'],
+			'cell cell-',
+			A2(
+				_elm_lang$core$Basics_ops['++'],
+				_elm_lang$core$Basics$toString(i),
+				A2(
+					_elm_lang$core$Basics_ops['++'],
+					'-',
+					_elm_lang$core$Basics$toString(j))));
 		return A2(
 			_elm_lang$core$Set$member,
 			{ctor: '_Tuple2', _0: i, _1: j},
-			onPositions) ? A2(
-			_elm_lang$core$Basics_ops['++'],
-			'url(',
-			A2(_elm_lang$core$Basics_ops['++'], _user$project$GontoArt$imageUrl, ')')) : '';
+			onPositions) ? A2(_elm_lang$core$Basics_ops['++'], base, ' on') : base;
 	});
 var _user$project$GontoArt$rowCount = 10;
 var _user$project$GontoArt$colCount = 15;
@@ -7414,50 +7420,70 @@ var _user$project$GontoArt$copyButton = function (onPositions) {
 				_elm_lang$html$Html_Attributes$attribute,
 				'data-clipboard-text',
 				_user$project$GontoArt$textOutput(onPositions)),
-				_elm_lang$html$Html_Attributes$class('btn btn-copy'),
-				_elm_lang$html$Html_Attributes$style(
-				_elm_lang$core$Native_List.fromArray(
-					[
-						{ctor: '_Tuple2', _0: 'marginLeft', _1: '50px'}
-					]))
+				_elm_lang$html$Html_Attributes$class('btn-copy')
 			]),
 		_elm_lang$core$Native_List.fromArray(
 			[
-				_elm_lang$html$Html$text('Copy (and then paste in Slack)')
+				_elm_lang$html$Html$text('copy')
+			]));
+};
+var _user$project$GontoArt$footer = function (onPositions) {
+	return A2(
+		_elm_lang$html$Html$div,
+		_elm_lang$core$Native_List.fromArray(
+			[
+				_elm_lang$html$Html_Attributes$class('footer')
+			]),
+		_elm_lang$core$Native_List.fromArray(
+			[
+				A2(
+				_elm_lang$html$Html$p,
+				_elm_lang$core$Native_List.fromArray(
+					[]),
+				_elm_lang$core$Native_List.fromArray(
+					[
+						_elm_lang$html$Html$text('Once you are ready, you can'),
+						_user$project$GontoArt$copyButton(onPositions),
+						_elm_lang$html$Html$text('it and')
+					])),
+				A2(
+				_elm_lang$html$Html$p,
+				_elm_lang$core$Native_List.fromArray(
+					[]),
+				_elm_lang$core$Native_List.fromArray(
+					[
+						_elm_lang$html$Html$text(' share it with your friends in Slack.')
+					]))
 			]));
 };
 var _user$project$GontoArt$cellLength = 40;
-var _user$project$GontoArt$boxStyle = _elm_lang$html$Html_Attributes$style(
-	_elm_lang$core$Native_List.fromArray(
-		[
-			{ctor: '_Tuple2', _0: 'margin', _1: '50px'},
-			{ctor: '_Tuple2', _0: 'boxShadow', _1: '0px 1px 4px 0px rgba(0,0,0,0.2)'},
-			{ctor: '_Tuple2', _0: 'backgroundColor', _1: 'rgba(0,0,0,0.1)'},
-			{ctor: '_Tuple2', _0: 'position', _1: 'relative'},
-			{
-			ctor: '_Tuple2',
-			_0: 'width',
-			_1: A2(
-				_elm_lang$core$Basics_ops['++'],
-				_elm_lang$core$Basics$toString((_user$project$GontoArt$cellLength + 1) * _user$project$GontoArt$colCount),
-				'px')
-		},
-			{
-			ctor: '_Tuple2',
-			_0: 'height',
-			_1: A2(
-				_elm_lang$core$Basics_ops['++'],
-				_elm_lang$core$Basics$toString((_user$project$GontoArt$cellLength + 1) * _user$project$GontoArt$rowCount),
-				'px')
-		}
-		]));
+var _user$project$GontoArt$boxStyle = function () {
+	var size = function (count) {
+		return A2(
+			_elm_lang$core$Basics_ops['++'],
+			_elm_lang$core$Basics$toString(((_user$project$GontoArt$cellLength + 1) * count) - 1),
+			'px');
+	};
+	return _elm_lang$html$Html_Attributes$style(
+		_elm_lang$core$Native_List.fromArray(
+			[
+				{
+				ctor: '_Tuple2',
+				_0: 'width',
+				_1: size(_user$project$GontoArt$colCount)
+			},
+				{
+				ctor: '_Tuple2',
+				_0: 'height',
+				_1: size(_user$project$GontoArt$rowCount)
+			}
+			]));
+}();
 var _user$project$GontoArt$cellStyle = F3(
 	function (i, j, onPositions) {
 		return _elm_lang$html$Html_Attributes$style(
 			_elm_lang$core$Native_List.fromArray(
 				[
-					{ctor: '_Tuple2', _0: 'position', _1: 'absolute'},
-					{ctor: '_Tuple2', _0: 'backgroundColor', _1: '#fff'},
 					{
 					ctor: '_Tuple2',
 					_0: 'width',
@@ -7489,14 +7515,41 @@ var _user$project$GontoArt$cellStyle = F3(
 						_elm_lang$core$Basics_ops['++'],
 						_elm_lang$core$Basics$toString(i * (_user$project$GontoArt$cellLength + 1)),
 						'px')
-				},
-					{
-					ctor: '_Tuple2',
-					_0: 'backgroundImage',
-					_1: A3(_user$project$GontoArt$cellBackgroundImage, i, j, onPositions)
 				}
 				]));
 	});
+var _user$project$GontoArt$intro = A2(
+	_elm_lang$html$Html$h1,
+	_elm_lang$core$Native_List.fromArray(
+		[]),
+	_elm_lang$core$Native_List.fromArray(
+		[
+			_elm_lang$html$Html$text('Hi! Make some art using my all time'),
+			A2(
+			_elm_lang$html$Html$br,
+			_elm_lang$core$Native_List.fromArray(
+				[]),
+			_elm_lang$core$Native_List.fromArray(
+				[])),
+			_elm_lang$html$Html$text('favorite emoji')
+		]));
+var _user$project$GontoArt$gonto = A2(
+	_elm_lang$html$Html$img,
+	_elm_lang$core$Native_List.fromArray(
+		[
+			_elm_lang$html$Html_Attributes$src('https://gon.to/images/home-about-portrait.jpg'),
+			_elm_lang$html$Html_Attributes$alt('Gonto')
+		]),
+	_elm_lang$core$Native_List.fromArray(
+		[]));
+var _user$project$GontoArt$header = A2(
+	_elm_lang$html$Html$div,
+	_elm_lang$core$Native_List.fromArray(
+		[
+			_elm_lang$html$Html_Attributes$class('header')
+		]),
+	_elm_lang$core$Native_List.fromArray(
+		[_user$project$GontoArt$gonto, _user$project$GontoArt$intro]));
 var _user$project$GontoArt$togglePosition = F2(
 	function (position, set) {
 		return A2(_elm_lang$core$Set$member, position, set) ? A2(_elm_lang$core$Set$remove, position, set) : A2(_elm_lang$core$Set$insert, position, set);
@@ -7524,6 +7577,8 @@ var _user$project$GontoArt$cell = F3(
 			_elm_lang$core$Native_List.fromArray(
 				[
 					A3(_user$project$GontoArt$cellStyle, i, j, onPositions),
+					_elm_lang$html$Html_Attributes$class(
+					A3(_user$project$GontoArt$cellClass, i, j, onPositions)),
 					_elm_lang$html$Html_Events$onClick(
 					_user$project$GontoArt$TogglePosition(
 						{ctor: '_Tuple2', _0: i, _1: j}))
@@ -7544,7 +7599,10 @@ var _user$project$GontoArt$box = function (onPositions) {
 	return A2(
 		_elm_lang$html$Html$div,
 		_elm_lang$core$Native_List.fromArray(
-			[_user$project$GontoArt$boxStyle]),
+			[
+				_elm_lang$html$Html_Attributes$class('box'),
+				_user$project$GontoArt$boxStyle
+			]),
 		_user$project$GontoArt$rows(onPositions));
 };
 var _user$project$GontoArt$view = function (_p3) {
@@ -7556,8 +7614,9 @@ var _user$project$GontoArt$view = function (_p3) {
 			[]),
 		_elm_lang$core$Native_List.fromArray(
 			[
+				_user$project$GontoArt$header,
 				_user$project$GontoArt$box(_p5),
-				_user$project$GontoArt$copyButton(_p5)
+				_user$project$GontoArt$footer(_p5)
 			]));
 };
 var _user$project$GontoArt$main = {
